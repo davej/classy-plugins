@@ -24,8 +24,7 @@ The command to run your tests should be added to `scripts.test` in your `package
 
 You can name your plugin whatever you like but I suggest that you follow the format of classy-myPluginName. Ensure that your bower.json has the keyword of 'classy-plugin', this will make it discoverable as an Angular Classy plugin. Ensure that Angular Classy is specified as a dependency of your plugin.
 
-Register your plugin on Bower with:
-    bower register <my-package-name> <git-endpoint>
+Register your plugin on Bower with: `bower register <my-package-name> <git-endpoint>`
 
 
 ### Your Plugin TODO list
