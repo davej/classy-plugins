@@ -8,7 +8,9 @@ If you want to see a real-world example of a Classy plugin then check out the [`
 
 ### Notes
 
-Coffeescript or Javascript is fine (or anything that compiles to javascript for that matter). If using Coffeescript then please include the compiled javascript along with the source files. Optionally you may also want to include a minified version of the source. Feel free to depend on a build tool like gulp or grunt for building your source. I like double-spaced indentation but use whatever you like.
+Coffeescript or Javascript is fine (or anything that compiles to javascript for that matter). If using Coffeescript then please include the compiled javascript along with the source files. Optionally you may also want to include a minified version of the source. Feel free to depend on a build tool like gulp or grunt for building your source.
+
+The command to run your build should be added to [`scripts.start` in your `package.json`](https://www.npmjs.org/doc/misc/npm-scripts.html).
 
 Make sure you include an examples directory which includes at least one example of using your plugin. I also like to use my example controllers as controllers for my test.
 
@@ -18,13 +20,19 @@ It is up to you how much testing you wish to do and how you would like to test y
 
 The approach that I like to take is to write a controller that uses classy with my plugin, I then test the resultant controller. This is a bit unconventional but I have found it to work quite well for me. Remember if you decide to only unit test the plugin directly then your tests won't cover any interactions with Angular controllers and Angular Classy.
 
-The command to run your tests should be added to `scripts.test` in your `package.json`.
+The command to run your tests should be added to [`scripts.test` in your `package.json`](https://www.npmjs.org/doc/misc/npm-scripts.html).
+
+### Naming your plugin
+
+You can name your plugin whatever you like but for the module name you should follow the format of `classy.myPluginName`. 
 
 ### Registering your plugin
 
-You can name your plugin whatever you like but I suggest that you follow the format of classy-myPluginName. Ensure that your bower.json has the keyword of 'classy-plugin', this will make it discoverable as an Angular Classy plugin. Ensure that Angular Classy is specified as a dependency of your plugin.
+Ensure that your bower.json has the keyword of 'classy-plugin', this will make it discoverable as an Angular Classy plugin and it will appear on the Classy website. Ensure that Angular Classy is specified as a dependency of your plugin.
 
 Register your plugin on Bower with: `bower register <my-package-name> <git-endpoint>`
+
+camelCase and dots (.) are not allowed on the bower registry so I use dashes instead: e.g. `classy.myPluginName -> classy-my-plugin-name`.
 
 
 ### Your Plugin TODO list

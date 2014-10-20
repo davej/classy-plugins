@@ -17,7 +17,6 @@ your plugin object into the `class.plugin.controller function`.
  */
 
 angular.module('classy-yourPlugin', ['classy-core']).classy.plugin.controller({
-  name: 'yourPlugin',
 
   /*
   The localInject Array
@@ -70,9 +69,9 @@ angular.module('classy-yourPlugin', ['classy-core']).classy.plugin.controller({
     // -> 'classyController', 'TodoCtrl', 'yourPlugin'
 
     /*
-    `this` provides access to local functions, it also provides access
-    to the compiled options object (i.e. it will include any setting overrides
-    that the user does).
+    `this` provides access to local functions, `this.name` is dynamically computed form the module name.
+    `this` also provides access to the compiled options object (i.e. it will include any
+    setting overrides that the user does).
      */
     this.doSomething(this.options.foo);
 

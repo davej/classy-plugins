@@ -14,9 +14,7 @@ Plugin Definition
 To create a plugin you need to include the `classy-core` module and then pass
 your plugin object into the `class.plugin.controller function`.
 
-    angular.module('classy-yourPlugin', ['classy-core']).classy.plugin.controller
-
-      name: 'yourPlugin'
+    angular.module('classy.yourPlugin', ['classy-core']).classy.plugin.controller
 
 The localInject Array
 ---------------------
@@ -61,8 +59,9 @@ Available arguments:
         console.log(classConstructor.name, classObj.name, @name)
         # -> 'classyController', 'TodoCtrl', 'yourPlugin'
 
-`@` or (`this`) provides access to local functions, it also provides access
-to the compiled options object (i.e. it will include any setting overrides
+`@` or (`this`) provides access to local functions, `@name` is dynamically computed from
+the module name.
+It also provides access to the compiled options object (i.e. it will include any setting overrides
 that the user does).
 
         @doSomething(@options.foo) # Display's an alert box saying 'Hello World!'
