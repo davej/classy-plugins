@@ -6,6 +6,24 @@ If you want to see a real-world example of a Classy plugin then check out the [`
 
 ## Writing your own Classy plugin
 
+### The Classy Controller Lifecycle
+
+![The Classy Controller Lifecycle](http://davej.github.io/angular-classy/images/lifecycle.png)
+
+It's worth familiarising yourself with Classy's controller lifecycle before you write a plugin. Take a look at the plugin template in [javascript](https://github.com/davej/classy-plugins/blob/master/classy-yourPlugin.js) or [coffeescript](https://github.com/davej/classy-plugins/blob/master/classy-yourPlugin.litcoffee) to get better acquainted, but here's a brief synopsis.
+
+#### `preInit`
+
+This is immediately after you define your controllers with `app.classy.controller()`.
+
+#### `init`
+
+This is when the controller get instantiated (usually with `ng-controller="MyController"`).
+
+#### `postInit`
+
+This is after the Classy controller's `init()` method has been executed.
+
 ### Notes
 
 Coffeescript or Javascript is fine (or anything that compiles to javascript for that matter). If using Coffeescript then please include the compiled javascript along with the source files. Optionally you may also want to include a minified version of the source. Feel free to depend on a build tool like gulp or grunt for building your source.
